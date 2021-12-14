@@ -69,12 +69,8 @@ function pointsUser(computerPoints) {
 }
 
 function resetGame() {
-  if (
-    countUser + countComputer <= 10 ||
-    countUser <= 10 ||
-    countComputer <= 10
-  ) {
-    return 'El juego ha terminado';
+  if (countComputer <= 10 || countUser <= 10 || countComputer <= 10) {
+    break;
   }
 }
 
