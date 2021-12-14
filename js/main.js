@@ -70,7 +70,6 @@ function pointsUser(computerPoints) {
 
 function resetGame() {
   if (countComputer <= 10 || countUser <= 10 || countComputer <= 10) {
-    break;
   }
 }
 
