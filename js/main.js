@@ -4,11 +4,11 @@ console.log('Holis');
 
 const selectMove = document.querySelector('.js-selector');
 const playButton = document.querySelector('.js-button');
-const userPoints = document.querySelector('.js-user');
-const computerPoints = document.querySelector('.js-computer');
 const letsGo = document.querySelector('.js-playGame');
 let inputComputer = document.querySelector('.js-inputComputer');
 let inputUser = document.querySelector('.js-inputUser');
+let countUser = 0;
+let countComputer = 0;
 
 //2.Funciones
 function getRandomNumber(max) {
@@ -43,24 +43,32 @@ function pointsUser(computerPoints) {
     letsGo.innerHTML = 'EMPATE';
   } else if (userPoints === 'Piedra' && computerPoints === 'Tijera') {
     letsGo.innerHTML = 'Has ganado';
+    countUser++;
+    inputUser.value = countUser;
   } else if (userPoints === 'Piedra' && computerPoints === 'Papel') {
     letsGo.innerHTML = 'Has perdido';
+    countComputer++;
+    inputComputer.value = countComputer;
   } else if (userPoints === 'Papel' && computerPoints === 'Piedra') {
     letsGo.innerHTML = 'Has ganado';
+    countUser++;
+    inputUser.value = countUser;
   } else if (userPoints === 'Papel' && computerPoints === 'Tijera') {
     letsGo.innerHTML = 'Has perdido';
+    countComputer++;
+    inputComputer.value = countComputer;
   } else if (userPoints === 'Tijera' && computerPoints === 'Piedra') {
     letsGo.innerHTML = 'Has perdido';
+    countComputer++;
+    inputComputer.value = countComputer;
   } else if (userPoints === 'Tijera' && computerPoints === 'Papel') {
     letsGo.innerHTML = 'Has ganado';
+    countUser++;
+    inputUser.value = countUser;
   }
 }
 
-function addPoints() {
-  let plusPointsComputer = (inputComputer += 1);
-  let plusPointsUser = (inputUser += 1);
-}
-
+function addPoints() {}
 function handlerClickPlay(event) {
   event.preventDefault();
   const computer = numberMovement();
