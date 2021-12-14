@@ -68,12 +68,23 @@ function pointsUser(computerPoints) {
   }
 }
 
+function resetGame() {
+  if (
+    countUser + countComputer <= 10 ||
+    countUser <= 10 ||
+    countComputer <= 10
+  ) {
+    return 'El juego ha terminado';
+  }
+}
+
 function addPoints() {}
 function handlerClickPlay(event) {
   event.preventDefault();
   const computer = numberMovement();
   pointsUser(computer);
   addPoints();
+  resetGame();
 }
 
 //3. Código que se ejecuta cuando se carga la página
