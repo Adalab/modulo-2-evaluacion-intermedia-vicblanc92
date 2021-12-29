@@ -4,30 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/reset.css" />
+
+    <link rel="stylesheet" href="./css/main.css" />
     <title>Piedra, papel o tijera</title>
   </head>
-  <main class="main">
-    <h1>Juego Piedra, Papel y Tijera</h1>
-    <h2>Introduce aquí tu jugada:</h2>
-    <form action="">
-      <label for="select">Seleccione aquí su jugada</label>
-      <select class="js-selector" name="select-move" id="select-move">
-        <option value="Piedra">Piedra</option>
-        <option value="Papel">Papel</option>
-        <option value="Tijera">Tijera</option>
-        <input class="js-button button" type="submit" value="Jugar" />
-      </select>
-    </form>
-
-    <h3 class="js-playGame playGame">Vamos a Jugar</h3>
-    <h3 class="js-user">Jugadora:</h3>
-    <input class="js-inputUser" type="number" />
-    <h3 class="js-computer">Computadora:</h3>
-    <input class="js-inputComputer" type="number" />
-  </main>
   <body>
+    <main class="main">
+      <h1>Juego Piedra, Papel y Tijera</h1>
+      <h2>Introduce aquí tu jugada:</h2>
+      <form action="">
+        <label for="select">Seleccione aquí su jugada</label>
+        <select class="js-selector" name="select-move" id="select-move">
+          <option value="Piedra">Piedra</option>
+          <option value="Papel">Papel</option>
+          <option value="Tijera">Tijera</option>
+          <input class="js-button button" type="submit" value="Jugar" />
+        </select>
+      </form>
+
+      <h3 class="js-playGame playGame">Vamos a Jugar</h3>
+      <h3 class="js-user">Jugadora:</h3>
+      <input class="js-inputUser" type="number" />
+      <h3 class="js-computer">Computadora:</h3>
+      <input class="js-inputComputer" type="number" />
+      <h3 class="js-computerMove"></h3>
+    </main>
+
     <script type="text/javascript" src="./js/main.js"></script>
   </body>
 </html>
