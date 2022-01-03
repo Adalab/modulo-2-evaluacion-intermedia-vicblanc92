@@ -14,7 +14,7 @@ function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
 
-function numberMovement() {
+function addComputerMovementsInHtml() {
   const randomNum = getRandomNumber(10);
   if (randomNum < 3) {
     console.log('Piedra');
@@ -31,7 +31,7 @@ function numberMovement() {
   }
 }
 
-function pointsUser(computerPoints) {
+function addUserAndComputerPoints(computerPoints) {
   const userPoints = selectMove.value;
 
   if (userPoints === computerPoints) {
@@ -64,18 +64,11 @@ function pointsUser(computerPoints) {
 }
 function paintComputerMove() {}
 
-function resetGame() {
-  if (countComputer <= 10 || countUser <= 10 || countComputer <= 10) {
-  }
-}
-
-function addPoints() {}
 function handlerClickPlay(event) {
   event.preventDefault();
   getRandomNumber();
-  const computer = numberMovement();
-  pointsUser(computer);
-  addPoints();
+  const computer = addComputerMovementsInHtml();
+  addUserAndComputerPoints(computer);
   resetGame();
 }
 
