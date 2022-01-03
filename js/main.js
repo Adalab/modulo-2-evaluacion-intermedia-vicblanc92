@@ -2,7 +2,7 @@
 
 const selectMove = document.querySelector('.js-selector');
 const playButton = document.querySelector('.js-button');
-const letsGo = document.querySelector('.js-playGame');
+const textElement = document.querySelector('.js-playGame');
 let inputComputer = document.querySelector('.js-inputComputer');
 let inputUser = document.querySelector('.js-inputUser');
 const computerMove = document.querySelector('.js-computerMove');
@@ -31,33 +31,34 @@ function addComputerMovementsInHtml() {
   }
 }
 
-function addUserAndComputerPoints(computerPoints) {
+function addUserAndComputerPoints(computerPoints, textElement) {
+  const textElement = textElement.innerHTML;
   const userPoints = selectMove.value;
 
   if (userPoints === computerPoints) {
-    letsGo.innerHTML = 'EMPATE';
+    textElement = 'EMPATE';
   } else if (userPoints === 'Piedra' && computerPoints === 'Tijera') {
-    letsGo.innerHTML = 'Has ganado';
+    textElement = 'Has ganado';
     countUser++;
     inputUser.value = countUser;
   } else if (userPoints === 'Piedra' && computerPoints === 'Papel') {
-    letsGo.innerHTML = 'Has perdido';
+    textElement = 'Has perdido';
     countComputer++;
     inputComputer.value = countComputer;
   } else if (userPoints === 'Papel' && computerPoints === 'Piedra') {
-    letsGo.innerHTML = 'Has ganado';
+    textElement = 'Has ganado';
     countUser++;
     inputUser.value = countUser;
   } else if (userPoints === 'Papel' && computerPoints === 'Tijera') {
-    letsGo.innerHTML = 'Has perdido';
+    textElement = 'Has perdido';
     countComputer++;
     inputComputer.value = countComputer;
   } else if (userPoints === 'Tijera' && computerPoints === 'Piedra') {
-    letsGo.innerHTML = 'Has perdido';
+    textElement = 'Has perdido';
     countComputer++;
     inputComputer.value = countComputer;
   } else if (userPoints === 'Tijera' && computerPoints === 'Papel') {
-    letsGo.innerHTML = 'Has ganado';
+    textElement = 'Has ganado';
     countUser++;
     inputUser.value = countUser;
   }
