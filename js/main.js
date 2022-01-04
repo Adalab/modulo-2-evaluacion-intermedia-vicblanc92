@@ -6,6 +6,7 @@ const textElement = document.querySelector('.js-playGame');
 let inputComputer = document.querySelector('.js-inputComputer');
 let inputUser = document.querySelector('.js-inputUser');
 const computerMove = document.querySelector('.js-computerMove');
+
 let countUser = 0;
 let countComputer = 0;
 let totalMovements = 0;
@@ -16,7 +17,7 @@ function getRandomNumber(max) {
 
 function addComputerMovementsInHtml() {
   const randomNum = getRandomNumber(10);
-  if (randomNum < 3) {
+  if (randomNum <= 3) {
     console.log('Piedra');
     computerMove.innerHTML = 'Movimiento: Piedra';
     return 'Piedra';
@@ -31,38 +32,48 @@ function addComputerMovementsInHtml() {
   }
 }
 
-function addUserAndComputerPoints(computerPoints, textElement) {
-  const textElement = textElement.innerHTML;
+function addUserAndComputerPoints(computerPoints) {
   const userPoints = selectMove.value;
 
   if (userPoints === computerPoints) {
-    textElement = 'EMPATE';
+    textElement.innerHTML = 'EMPATE';
   } else if (userPoints === 'Piedra' && computerPoints === 'Tijera') {
-    textElement = 'Has ganado';
+    textElement.innerHTML = 'Has ganado';
     countUser++;
     inputUser.value = countUser;
   } else if (userPoints === 'Piedra' && computerPoints === 'Papel') {
-    textElement = 'Has perdido';
+    textElement.innerHTML = 'Has perdido';
     countComputer++;
     inputComputer.value = countComputer;
   } else if (userPoints === 'Papel' && computerPoints === 'Piedra') {
-    textElement = 'Has ganado';
+    textElement.innerHTML = 'Has ganado';
     countUser++;
     inputUser.value = countUser;
   } else if (userPoints === 'Papel' && computerPoints === 'Tijera') {
-    textElement = 'Has perdido';
+    textElement.innerHTML = 'Has perdido';
     countComputer++;
     inputComputer.value = countComputer;
   } else if (userPoints === 'Tijera' && computerPoints === 'Piedra') {
-    textElement = 'Has perdido';
+    textElement.innerHTML = 'Has perdido';
     countComputer++;
     inputComputer.value = countComputer;
   } else if (userPoints === 'Tijera' && computerPoints === 'Papel') {
-    textElement = 'Has ganado';
+    textElement.innerHTML = 'Has ganado';
     countUser++;
     inputUser.value = countUser;
   }
 }
+
+function resetGame() {
+  totalMovements = countComputer + countUser;
+
+  if (totalMovements === 10) {
+    computerMove.innerHTML = 'Has llegado a 10 partidas';
+    countComputer = 0;
+    countUser = 0;
+  }
+}
+
 function paintComputerMove() {}
 
 function handlerClickPlay(event) {
